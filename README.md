@@ -1,6 +1,6 @@
 # SICK LMS500 Lidar Interpretation
 
-![Screenshot](image.jpg)
+![Screenshot](image.png)
 
 Real-time point cloud visualiser for the SICK LMS500 LiDAR that works over Serial exposed on USB, rather than Ethernet.  
 Reads LMDscandata telegrams over the serial service port, parses them, converts to Cartesian coordinates, and displays a live map with rotation control.
