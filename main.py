@@ -7,9 +7,6 @@ import math
 PORT = "COM7"
 BAUD = 57600
 
-
-# -------------------- Parsing --------------------
-
 def parse_lmdscandata(telegram: str):
     tokens = telegram.strip().split(" ")
 
@@ -77,7 +74,6 @@ def apply_rotation(x, y, deg):
     return xr, yr
 
 
-# -------------------- Main + UI --------------------
 
 def main():
     ser = serial.Serial(
@@ -94,7 +90,7 @@ def main():
 
     buffer = b""
 
-    # ---------- Plot + slider setup ----------
+    # Plot and slider
     plt.ion()
     fig, ax = plt.subplots()
 
@@ -116,14 +112,14 @@ def main():
     ax.set_xticks(np.arange(-6, 7, 1))
     ax.set_yticks(np.arange(-1, 7, 1))
 
-    # --- Coordinate readout text (top-left, axes coords) ---
+    # Coordinate readings
     coord_text = ax.text(
         0.02, 0.98, "",
         transform=ax.transAxes,
         va="top", ha="left"
     )
 
-    # rotation slider
+    # Rotation slider
     ax_slider = plt.axes([0.2, 0.1, 0.6, 0.05])
     rot_slider = Slider(
         ax=ax_slider,
@@ -147,7 +143,6 @@ def main():
 
     rot_slider.on_changed(update_rotation)
 
-    # --- Mouse move callback to show coordinates under cursor ---
     def on_move(event):
         if event.inaxes != ax or event.xdata is None or event.ydata is None:
             coord_text.set_text("")
@@ -157,7 +152,7 @@ def main():
 
     fig.canvas.mpl_connect("motion_notify_event", on_move)
 
-    # ---------- Main loop ----------
+    # Main loop
     try:
         while True:
             chunk = ser.read(4096)
