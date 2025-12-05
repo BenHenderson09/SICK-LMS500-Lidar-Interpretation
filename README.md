@@ -1,6 +1,6 @@
 # SICK LMS500 Lidar Interpretation
 
-![Screenshot](image.png)
+![Screenshot](image2.png)
 
 Real-time point cloud visualiser for the SICK LMS500 LiDAR that works over Serial exposed on USB, rather than Ethernet.  
 
