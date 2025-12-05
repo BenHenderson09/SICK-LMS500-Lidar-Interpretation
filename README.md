@@ -6,6 +6,8 @@ Real-time point cloud visualiser for the SICK LMS500 LiDAR that works over Seria
 
 Reads LMDscandata telegrams over the serial service port, parses them, converts to Cartesian coordinates, and displays a live map with rotation control.
 
+I reccomend comparing this against the point cloud output from the SICK SOPAS ET Engineering tool for Windows. Especially for rotation adjustment.
+
 ## Features
 - Real-time point cloud using pyserial and matplotlib  
 - Full LMDscandata parser  
