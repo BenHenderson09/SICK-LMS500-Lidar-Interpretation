@@ -19,6 +19,8 @@ Install dependencies:
 
 pip install pyserial matplotlib numpy
 
+Download and setup the USB driver from SICK. After that is done, check the Windows device manager for a lidar device on a COM port, should be ready to go then.
+
 ## Usage
 1. Connect the LMS500 via USB and identify the COM port.  
 2. Set `PORT = "COMx"` in the script.  
